@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Sayang</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Great Vibes', cursive, 'Brush Script MT', 'Palatino Linotype', serif;
+            background-color: #ffeef8; /* Warna background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0; /* Menghilangkan margin default */
+            overflow: hidden; /* Menghindari scroll saat animasi */
+        }
+        .container {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            text-align: center;
+            padding: 20px;
+            max-width: 400px;
+            width: 100%; /* Memastikan kontainer responsif */
+        }
+        h1 {
+            color: #ff6f78; /* Warna teks judul */
+            margin: 0;
+            font-weight: bold; /* Set font-weight to bold */
+            font-size: 33px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+            font-family: 'Great Vibes', cursive;
+        }
+        p {
+            color: #ffffff;
+            margin: 10px 0;
+            font-family: 'Palatino Linotype', 'Book Antiqua', serif;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        .circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 20px auto;
+            box-shadow: 0 0 10px rgba(255, 111, 120, 0.3);
+            position: relative;
+            background-color: white; /* Optional: Set background color */
+        }
+        .circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* Removed border */
+        }
+        .button {
+            background-color: #ff6f78; /* Warna tombol */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s; /* Efek transisi */
+        }
+        .button:hover {
+            background-color: #ff4f5a; /* Warna tombol saat hover */
+        }
+        .message-box {
+            background-color: #fca6ab;
+            border-radius: 15px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .heart {
+            position: absolute;
+            pointer-events: none;
+            animation: heartAnimation 3s linear forwards;
+            font-size: 24px; /* Ukuran hati */
+            color: #ff6f78;
+        }
+        @keyframes heartAnimation {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-150px) rotate(20deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Happy Birthday Sayang!</h1>
+        <div class="circle">
+            <img src="PutriW.jpg" alt="Foto Putri" />
+        </div>
+        <div class="message-box">
+            <p>For Putri Wulandari,</p>
+            <p>Di hari spesialmu ini, aku ingin sampaikan betapa beruntungnya aku memiliki kamu dalam hidupku. 
+            Setiap hari bersamamu adalah anugerah terindah.</p>
+            <p>Semoga tahun ini membawa lebih banyak kebahagiaan, keceriaan, dan cinta dalam hidupmu 
+            seperti yang selalu kau berikan padaku.</p>
+            <p>Love you more Putri Wulandari</p>
+        </div>
+        <button class="button" id="surpriseBtn">Klik Sayang</button>
+        <script>
+            document.getElementById('surpriseBtn').addEventListener('click', function() {
+                for (let i = 0; i < 50; i++) {
+                    setTimeout(() => {
+                        const heart = document.createElement('div');
+                        heart.className = 'heart';
+                        heart.innerHTML = '❤️'; // Menggunakan satu bentuk hati
+                        heart.style.left = Math.random() * 100 + 'vw'; // Posisi horizontal acak
+                        heart.style.top = Math.random() * 100 + 'vh'; // Posisi vertikal acak
+                        document.body.appendChild(heart);
+                        
+                        setTimeout(() => {
+                            heart.remove(); // Menghapus hati setelah animasi selesai
+                        }, 3000); // Waktu yang sama dengan durasi animasi
+                    }, i * 100); // Interval waktu antara setiap hati
+                }
+            });
+        </script>
+    </div>
+</body>
+</html>
